@@ -1,0 +1,38 @@
+{% extends './layout.html' %} <!--Reutilzar la plantilla-->
+
+{% block title %} Interface {% endblock %}
+
+{% block body %} <!--Lo indicado aqui es lo unico que se remplaza-->
+<h1>{{name}}</h1>
+<table class="table table-striped">
+<tr>
+    <th>Interfaz</th>
+    <th>Modo</th>
+    <th>Miembro</th>
+    <th>Accion</th>
+</tr>
+    {% for interface in ports_info %}
+    {% if interface.mode == 'access' %}
+    <tr>
+        <td>{{ interface.name }}</td>
+        <td>{{ interface.mode }}</td>
+        <td>
+            {% if interface.member %}
+                {{ interface.member }}
+            {% else %}
+                Ninguno
+            {% endif %}
+        </td>
+        <td>  
+            <a href="" id="" data-foto="" onclick="" class="btn btn-info btn-sm"
+            tooltip="Eliminar Registro">
+            <i class="bi bi-arrow-clockwise"></i>
+            Modificar
+        </a>
+    </tr>
+    {% endif %}
+    {% endfor %}
+
+
+</table>
+{% endblock %}

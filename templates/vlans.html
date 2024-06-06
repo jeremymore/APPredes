@@ -1,0 +1,37 @@
+{% extends './layout.html' %} <!--Reutilzar la plantilla-->
+
+{% block title %} Vlans {% endblock %}
+
+{% block body %} <!--Lo indicado aqui es lo unico que se remplaza-->
+<table class="table table-striped">
+        <a href="{{ url_for('create') }}" class="btn btn-info btn-sm"
+        tooltip="Actualizar Registro">
+        <i class="bi bi-arrow-clockwise"></i>
+        Crear
+    </a>
+    <tr>
+        <th>VLAN</th>
+        <th>VLAN ID</th>
+        <th>Nombre Dispositivos</th>
+        <th>Segmento VLAN</th>
+        <th>Accion</th>
+    </tr>
+    {% for vlan_name, data in vlans_dict.items() %}
+    <tr>
+        <td>{{ vlan_name }}</td>
+        <td>{{ data.id }}</td>
+        <td><a href="/device/{{ ', '.join(data.devices)}}">{{ ', '.join(data.devices) }}</a></td>
+        <td>{{ data.segmento_red }}</td>
+        <td>  
+            <a href="/delete/{{vlan_name}}/{{ data.id }}" id="" data-foto="" onclick="" class="btn btn-danger btn-sm"
+            tooltip="Eliminar Registro">
+            <i class="bi bi-trash3"></i>
+            Eliminar
+        </a>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+{% endblock %}

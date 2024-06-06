@@ -1,0 +1,82 @@
+{% extends './layout.html' %} <!--Reutilzar la plantilla-->
+
+{% block title %} Vlans {% endblock %}
+
+{% block body %} <!--Lo indicado aqui es lo unico que se remplaza-->
+<form method="post">
+    <Table>
+        <tr>
+            <td>{{form.vlan_name.label}}</td>
+            <td>{{form.vlan_name(class="input")}}</td>
+        </tr>
+        <tr>
+            <td>{{form.vlan_id.label}}</td>
+            <td>{{form.vlan_id(class="input")}}</td>
+        </tr>
+        <tr>
+            <td>{{form.switch_acc.label}}</td>
+            <td>{{form.switch_acc()}}</td>
+        </tr>
+        <tr>
+            <td><label for="switch_int">Interfaz de Acceso:</label></td>
+            <td>
+                <table id="switch_int">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <th><label for="switch_int-0">xe-1/0/1</label></th>
+                                <td><input id="switch_int-0" name="switch_int" type="checkbox"
+                                        value="xe-1/0/1"></td>
+                            </td>
+                            <td>
+                                <th><label for="switch_int-1">xe-1/0/2</label></th>
+                                <td><input id="switch_int-1" name="switch_int" type="checkbox"
+                                        value="xe-1/0/2"></td>
+                            </td>
+                            <td>
+                                <th><label for="switch_int-2">xe-1/0/3</label></th>
+                                <td><input id="switch_int-2" name="switch_int" type="checkbox"
+                                        value="xe-1/0/3"></td>
+                            </td>
+                            <td>
+                                <th><label for="switch_int-3">xe-1/0/4</label></th>
+                                <td><input id="switch_int-3" name="switch_int" type="checkbox"
+                                        value="xe-1/0/4"></td>
+                            </td>
+                        </tr>
+                        <tr>
+                              <td>
+                                <th><label for="switch_int-4">xe-1/0/5</label></th>
+                                <td><input id="switch_int-4" name="switch_int" type="checkbox"
+                                    value="xe-1/0/5"></td>
+                              </td>
+                              <td>
+                                <th><label for="switch_int-5">xe-1/0/6</label></th>
+                                <td><input id="switch_int-5" name="switch_int" type="checkbox"
+                                    value="xe-1/0/6"></td>
+                              </td>
+                              <td>
+                                <th><label for="switch_int-6">xe-1/0/7</label></th>
+                                <td><input id="switch_int-6" name="switch_int" type="checkbox"
+                                    value="xe-1/0/7"></td>
+                              </td>
+                              <td>
+                                <th><label for="switch_int-7">xe-1/0/8</label></th>
+                                <td><input id="switch_int-7" name="switch_int" type="checkbox"
+                                    value="xe-1/0/8"></td>
+                              </td>
+                        </tr>
+                        
+                        
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td><button type="Submit">Crear</button></td>
+        </tr>
+    </Table>
+</form>
+
+
+{% endblock %}
